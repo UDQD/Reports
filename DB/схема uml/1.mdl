@@ -2420,7 +2420,1130 @@
 			max_width  	21600
 			origin_x   	0
 			origin_y   	0
-			items      	(list diagram_item_list)))))
+			items      	(list diagram_item_list))))
+	    (object Class_Category "NewPackage"
+		quid       	"5AFFEEB90020"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list)
+		logical_presentations 	(list unit_reference_list))
+	    (object Class_Category "3.4"
+		quid       	"5AFFEF60009D"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list)
+		statemachine 	(object State_Machine "State/Activity Model"
+		    quid       	"5AFFEFA40020"
+		    states     	(list States
+			(object State "$UNNAMED$25"
+			    quid       	"5AFFF01103AA"
+			    type       	"StartState")
+			(object State "Waiting of task"
+			    quid       	"5AFFF050007D"
+			    type       	"Normal")
+			(object State "spliting task"
+			    quid       	"5AFFF2BE02A0"
+			    type       	"Normal")
+			(object State "creating of arcitecture software"
+			    quid       	"5AFFF37400CC"
+			    type       	"Normal")
+			(object State "creating of arcitecture of neural network"
+			    quid       	"5AFFF3C00000"
+			    type       	"Normal")
+			(object State "trening of neural network"
+			    quid       	"5AFFF49503AA"
+			    type       	"Normal")
+			(object State "testing of neural network"
+			    quid       	"5AFFF4D00262"
+			    type       	"Normal")
+			(object State "implementation of a neural network into a project"
+			    quid       	"5B006C1F02B0"
+			    type       	"Normal")
+			(object State "testing all project"
+			    quid       	"5B006D4E0168"
+			    type       	"Normal")
+			(object State "demonstration to the customer"
+			    quid       	"5B006DBC0139"
+			    type       	"Normal")
+			(object State "debug"
+			    quid       	"5B006E190233"
+			    type       	"Normal")
+			(object State "$UNNAMED$26"
+			    quid       	"5B0076A100DB"
+			    type       	"EndState"))
+		    partitions 	(list Partitions)
+		    objects    	(list Objects)
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5AFFF2B6010A"
+			    supplier   	"Use Case View::3.4::State/Activity Model::Waiting of task"
+			    supplier_quidu 	"5AFFF050007D"
+			    client     	"$UNNAMED$25"
+			    client_quidu 	"5AFFF01103AA"
+			    sendEvent  	(object sendEvent
+				quid       	"5AFFF2B6010D"))
+			(object State_Transition
+			    quid       	"5AFFF2D30243"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::spliting task"
+			    supplier_quidu 	"5AFFF2BE02A0"
+			    client     	"Use Case View::3.4::State/Activity Model::Waiting of task"
+			    client_quidu 	"5AFFF050007D"
+			    Event      	(object Event "task received"
+				quid       	"5AFFF2D30244")
+			    sendEvent  	(object sendEvent
+				quid       	"5AFFF2D30246"))
+			(object State_Transition
+			    quid       	"5AFFF3CB0223"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::creating of arcitecture of neural network"
+			    supplier_quidu 	"5AFFF3C00000"
+			    client     	"Use Case View::3.4::State/Activity Model::spliting task"
+			    client_quidu 	"5AFFF2BE02A0"
+			    Event      	(object Event "give task for data scientist"
+				quid       	"5AFFF3CB0224")
+			    sendEvent  	(object sendEvent
+				quid       	"5AFFF3CB0226"))
+			(object State_Transition
+			    quid       	"5AFFF3CF0233"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::creating of arcitecture software"
+			    supplier_quidu 	"5AFFF37400CC"
+			    client     	"Use Case View::3.4::State/Activity Model::spliting task"
+			    client_quidu 	"5AFFF2BE02A0"
+			    Event      	(object Event "give task for engineer"
+				quid       	"5AFFF3CF0234")
+			    sendEvent  	(object sendEvent
+				quid       	"5AFFF3CF0236"))
+			(object State_Transition
+			    quid       	"5AFFF49B033D"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::trening of neural network"
+			    supplier_quidu 	"5AFFF49503AA"
+			    client     	"Use Case View::3.4::State/Activity Model::creating of arcitecture of neural network"
+			    client_quidu 	"5AFFF3C00000"
+			    Event      	(object Event "arcitecture is ready"
+				quid       	"5AFFF49B033E")
+			    sendEvent  	(object sendEvent
+				quid       	"5AFFF49B0340"))
+			(object State_Transition
+			    quid       	"5B006B07032D"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::testing of neural network"
+			    supplier_quidu 	"5AFFF4D00262"
+			    client     	"Use Case View::3.4::State/Activity Model::trening of neural network"
+			    client_quidu 	"5AFFF49503AA"
+			    Event      	(object Event "neural network trained"
+				quid       	"5B006B07033D")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006B07033F"))
+			(object State_Transition
+			    quid       	"5B006B33010A"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::trening of neural network"
+			    supplier_quidu 	"5AFFF49503AA"
+			    client     	"Use Case View::3.4::State/Activity Model::testing of neural network"
+			    client_quidu 	"5AFFF4D00262"
+			    Event      	(object Event "bad result"
+				quid       	"5B006B33010B")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006B33010D"))
+			(object State_Transition
+			    quid       	"5B006C65034C"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::implementation of a neural network into a project"
+			    supplier_quidu 	"5B006C1F02B0"
+			    client     	"Use Case View::3.4::State/Activity Model::testing of neural network"
+			    client_quidu 	"5AFFF4D00262"
+			    Event      	(object Event "good result"
+				quid       	"5B006C65034D")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006C65034F"))
+			(object State_Transition
+			    quid       	"5B006CAD02DF"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::implementation of a neural network into a project"
+			    supplier_quidu 	"5B006C1F02B0"
+			    client     	"Use Case View::3.4::State/Activity Model::creating of arcitecture software"
+			    client_quidu 	"5AFFF37400CC"
+			    Event      	(object Event "the project is prepared for implementation"
+				quid       	"5B006CAD02E0")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006CAD02E2"))
+			(object State_Transition
+			    quid       	"5B006D5E03AA"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::testing all project"
+			    supplier_quidu 	"5B006D4E0168"
+			    client     	"Use Case View::3.4::State/Activity Model::implementation of a neural network into a project"
+			    client_quidu 	"5B006C1F02B0"
+			    Event      	(object Event "implementation was successful"
+				quid       	"5B006D5E03AB")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006D5E03AD"))
+			(object State_Transition
+			    quid       	"5B006E2F00BC"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::debug"
+			    supplier_quidu 	"5B006E190233"
+			    client     	"Use Case View::3.4::State/Activity Model::testing all project"
+			    client_quidu 	"5B006D4E0168"
+			    Event      	(object Event "bad result"
+				quid       	"5B006E2F00BD")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006E2F00BF"))
+			(object State_Transition
+			    quid       	"5B006E92011A"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::testing all project"
+			    supplier_quidu 	"5B006D4E0168"
+			    client     	"Use Case View::3.4::State/Activity Model::debug"
+			    client_quidu 	"5B006E190233"
+			    Event      	(object Event "debug completed"
+				quid       	"5B006E92011B")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006E92011D"))
+			(object State_Transition
+			    quid       	"5B006EA00139"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::demonstration to the customer"
+			    supplier_quidu 	"5B006DBC0139"
+			    client     	"Use Case View::3.4::State/Activity Model::testing all project"
+			    client_quidu 	"5B006D4E0168"
+			    Event      	(object Event "no bugs"
+				quid       	"5B006EA0013A")
+			    sendEvent  	(object sendEvent
+				quid       	"5B006EA0013C"))
+			(object State_Transition
+			    quid       	"5B0076A5037B"
+			    label      	""
+			    supplier   	"$UNNAMED$26"
+			    supplier_quidu 	"5B0076A100DB"
+			    client     	"Use Case View::3.4::State/Activity Model::demonstration to the customer"
+			    client_quidu 	"5B006DBC0139"
+			    Event      	(object Event "the customer is satisfied"
+				quid       	"5B0076A5037C")
+			    sendEvent  	(object sendEvent
+				quid       	"5B0076A5037E"))
+			(object State_Transition
+			    quid       	"5B00775001B6"
+			    label      	""
+			    supplier   	"Use Case View::3.4::State/Activity Model::spliting task"
+			    supplier_quidu 	"5AFFF2BE02A0"
+			    client     	"Use Case View::3.4::State/Activity Model::demonstration to the customer"
+			    client_quidu 	"5B006DBC0139"
+			    Event      	(object Event "customer is dissatisfied"
+				quid       	"5B00775001B7")
+			    sendEvent  	(object sendEvent
+				quid       	"5B00775001B9")))
+		    objectflows 	(list objectflow_list)
+		    statediagrams 	(list StateDiagrams
+			(object State_Diagram "NewDiagram3"
+			    quid       	"5AFFEFA4002F"
+			    title      	"NewDiagram3"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object StateView "StartState" "$UNNAMED$25" @116
+				    location   	(1696, 208)
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"5AFFF01103AA"
+				    autoResize 	TRUE)
+				(object StateView "Normal" "Waiting of task" @117
+				    location   	(1696, 512)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@117
+					location   	(1696, 501)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	204
+					justify    	0
+					label      	"Waiting of task")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF050007D"
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @118
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5AFFF2B6010A"
+				    client     	@116
+				    supplier   	@117
+				    vertices   	(list Points
+					(1696, 238)
+					(1696, 445))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "spliting task" @119
+				    location   	(1696, 864)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@119
+					location   	(1696, 853)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	204
+					justify    	0
+					label      	"spliting task")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF2BE02A0"
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @120
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @121
+					Parent_View 	@120
+					location   	(1838, 656)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"task received"
+					pctDist    	0.357798
+					height     	142
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5AFFF2D30243"
+				    client     	@117
+				    supplier   	@119
+				    vertices   	(list Points
+					(1696, 579)
+					(1696, 797))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "creating of arcitecture software" @122
+				    location   	(1184, 1184)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@122
+					location   	(1184, 1173)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	402
+					justify    	0
+					label      	"creating of arcitecture software")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF37400CC"
+				    width      	498
+				    height     	134
+				    autoResize 	TRUE)
+				(object StateView "Normal" "creating of arcitecture of neural network" @123
+				    location   	(2272, 1184)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@123
+					location   	(2272, 1173)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	442
+					justify    	0
+					label      	"creating of arcitecture of neural network")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF3C00000"
+				    width      	538
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @124
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @125
+					Parent_View 	@124
+					location   	(2005, 985)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	512
+					justify    	0
+					label      	"give task for data scientist"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5AFFF3CB0223"
+				    client     	@119
+				    supplier   	@123
+				    vertices   	(list Points
+					(1816, 930)
+					(2151, 1116))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @126
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @127
+					Parent_View 	@126
+					location   	(1464, 1061)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"give task for engineer"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5AFFF3CF0233"
+				    client     	@119
+				    supplier   	@122
+				    vertices   	(list Points
+					(1588, 930)
+					(1291, 1117))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "trening of neural network" @128
+				    location   	(2272, 1536)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@128
+					location   	(2272, 1525)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	262
+					justify    	0
+					label      	"trening of neural network")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF49503AA"
+				    width      	358
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @129
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @130
+					Parent_View 	@129
+					location   	(2317, 1360)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"arcitecture is ready"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5AFFF49B033D"
+				    client     	@123
+				    supplier   	@128
+				    vertices   	(list Points
+					(2272, 1251)
+					(2272, 1469))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "testing of neural network" @131
+				    location   	(2240, 1840)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@131
+					location   	(2240, 1829)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	262
+					justify    	0
+					label      	"testing of neural network")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5AFFF4D00262"
+				    width      	358
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @132
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @133
+					Parent_View 	@132
+					location   	(2300, 1693)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"neural network trained"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006B07032D"
+				    client     	@128
+				    supplier   	@131
+				    vertices   	(list Points
+					(2264, 1603)
+					(2247, 1772))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "implementation of a neural network into a project" @134
+				    location   	(1184, 2176)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@134
+					location   	(1184, 2165)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	488
+					justify    	0
+					label      	"implementation of a neural network into a project")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5B006C1F02B0"
+				    width      	584
+				    height     	134
+				    autoResize 	TRUE)
+				(object TransView "" @135
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @136
+					Parent_View 	@135
+					location   	(1811, 1670)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"bad result"
+					pctDist    	0.500643
+					height     	29
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006B33010A"
+				    client     	@131
+				    supplier   	@128
+				    vertices   	(list Points
+					(2061, 1839)
+					(1840, 1838)
+					(1840, 1535)
+					(2093, 1535))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @137
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @138
+					Parent_View 	@137
+					location   	(1992, 2221)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"good result"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006C65034C"
+				    client     	@131
+				    supplier   	@134
+				    vertices   	(list Points
+					(2240, 1907)
+					(2240, 2176)
+					(1476, 2176))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @139
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @140
+					Parent_View 	@139
+					location   	(1229, 1680)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	807
+					justify    	0
+					label      	"the project is prepared for implementation"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006CAD02DF"
+				    client     	@122
+				    supplier   	@134
+				    vertices   	(list Points
+					(1184, 1251)
+					(1184, 2109))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object StateView "Normal" "testing all project" @141
+				    location   	(1152, 2656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@141
+					location   	(1152, 2645)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	204
+					justify    	0
+					label      	"testing all project")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5B006D4E0168"
+				    height     	134
+				    autoResize 	TRUE)
+				(object StateView "Normal" "demonstration to the customer" @142
+				    location   	(1200, 3344)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@142
+					location   	(1200, 3333)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	344
+					justify    	0
+					label      	"demonstration to the customer")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5B006DBC0139"
+				    width      	440
+				    height     	134
+				    autoResize 	TRUE)
+				(object StateView "Normal" "debug" @143
+				    location   	(1152, 2992)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@143
+					location   	(1152, 2981)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	204
+					justify    	0
+					label      	"debug")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"5B006E190233"
+				    height     	134
+				    autoResize 	TRUE)
+				(object StateView "EndState" "$UNNAMED$26" @144
+				    location   	(2496, 3344)
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"5B0076A100DB"
+				    autoResize 	TRUE)
+				(object TransView "" @145
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @146
+					Parent_View 	@145
+					location   	(1197, 2824)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"bad result"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006E2F00BC"
+				    client     	@141
+				    supplier   	@143
+				    vertices   	(list Points
+					(1152, 2723)
+					(1152, 2925))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @147
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @148
+					Parent_View 	@147
+					location   	(1498, 3016)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"no bugs"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006EA00139"
+				    client     	@141
+				    supplier   	@142
+				    vertices   	(list Points
+					(1302, 2654)
+					(1453, 2653)
+					(1453, 3150)
+					(1200, 3150)
+					(1200, 3277))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @149
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @150
+					Parent_View 	@149
+					location   	(803, 2991)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"debug completed"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006E92011A"
+				    client     	@143
+				    supplier   	@141
+				    vertices   	(list Points
+					(1150, 3059)
+					(1150, 3119)
+					(847, 3119)
+					(847, 2653)
+					(1002, 2654))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @151
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @152
+					Parent_View 	@151
+					location   	(1212, 2419)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	614
+					justify    	0
+					label      	"implementation was successful"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B006D5E03AA"
+				    client     	@134
+				    supplier   	@141
+				    vertices   	(list Points
+					(1179, 2243)
+					(1156, 2588))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @153
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @154
+					Parent_View 	@153
+					location   	(1937, 3300)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"the customer is satisfied"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B0076A5037B"
+				    client     	@142
+				    supplier   	@144
+				    vertices   	(list Points
+					(1420, 3344)
+					(2454, 3344))
+				    line_style 	0
+				    x_offset   	FALSE)
+				(object TransView "" @155
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @156
+					Parent_View 	@155
+					location   	(450, 1821)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    charSet    	204
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"customer is dissatisfied"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"5B00775001B6"
+				    client     	@142
+				    supplier   	@119
+				    vertices   	(list Points
+					(980, 3344)
+					(494, 3344)
+					(494, 863)
+					(1546, 863))
+				    line_style 	0
+				    x_offset   	FALSE)))))
+		logical_presentations 	(list unit_reference_list)))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
 		quid       	"39C9261001B7"
@@ -2431,7 +3554,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ClassView "Class" "Use Case View::3.1::NewClass" @116
+		    (object ClassView "Class" "Use Case View::3.1::NewClass" @157
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -2447,7 +3570,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@116
+			    Parent_View 	@157
 			    location   	(608, 304)
 			    anchor_loc 	1
 			    nlines     	2
@@ -2492,7 +3615,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Logical View::java" @117
+		    (object CategoryView "Logical View::java" @158
 			location   	(208, 272)
 			font       	(object Font
 			    size       	10
@@ -2505,7 +3628,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@117
+			    Parent_View 	@158
 			    location   	(64, 188)
 			    nlines     	2
 			    max_width  	288
@@ -2517,7 +3640,7 @@
 			quidu      	"39C92661003B"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::javax" @118
+		    (object CategoryView "Logical View::javax" @159
 			location   	(656, 272)
 			font       	(object Font
 			    size       	10
@@ -2530,7 +3653,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@118
+			    Parent_View 	@159
 			    location   	(512, 188)
 			    nlines     	2
 			    max_width  	288
@@ -2542,7 +3665,7 @@
 			quidu      	"39C926610018"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::org" @119
+		    (object CategoryView "Logical View::org" @160
 			location   	(1104, 272)
 			font       	(object Font
 			    size       	10
@@ -2555,7 +3678,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@119
+			    Parent_View 	@160
 			    location   	(960, 188)
 			    nlines     	2
 			    max_width  	288
@@ -2576,7 +3699,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object NoteView @120
+		    (object NoteView @161
 			location   	(224, 624)
 			font       	(object Font
 			    size       	10
@@ -2592,7 +3715,7 @@
 			fill_color 	12632256
 			width      	300
 			height     	132)
-		    (object NoteView @121
+		    (object NoteView @162
 			location   	(704, 624)
 			font       	(object Font
 			    size       	10
@@ -2608,7 +3731,7 @@
 			fill_color 	8421631
 			width      	300
 			height     	132)
-		    (object NoteView @122
+		    (object NoteView @163
 			location   	(1200, 624)
 			font       	(object Font
 			    size       	10
@@ -2624,7 +3747,7 @@
 			fill_color 	12615680
 			width      	300
 			height     	132)
-		    (object NoteView @123
+		    (object NoteView @164
 			location   	(1664, 624)
 			font       	(object Font
 			    size       	10
@@ -2640,7 +3763,7 @@
 			fill_color 	16777215
 			width      	300
 			height     	132)
-		    (object Label @124
+		    (object Label @165
 			location   	(81, 369)
 			font       	(object Font
 			    size       	12
@@ -2656,7 +3779,7 @@
 			max_width  	1163
 			justify    	1
 			label      	"J2EE: Java 2 Platform, Enterprise Edition - v 1.2.1")
-		    (object Label @125
+		    (object Label @166
 			location   	(96, 608)
 			font       	(object Font
 			    size       	10
@@ -2672,7 +3795,7 @@
 			max_width  	268
 			justify    	1
 			label      	"Abstract Class")
-		    (object Label @126
+		    (object Label @167
 			location   	(592, 608)
 			font       	(object Font
 			    size       	10
@@ -2688,7 +3811,7 @@
 			max_width  	225
 			justify    	1
 			label      	"Final Class")
-		    (object Label @127
+		    (object Label @168
 			location   	(1104, 608)
 			font       	(object Font
 			    size       	10
@@ -2704,7 +3827,7 @@
 			max_width  	206
 			justify    	1
 			label      	"Interface")
-		    (object Label @128
+		    (object Label @169
 			location   	(1552, 608)
 			font       	(object Font
 			    size       	10
