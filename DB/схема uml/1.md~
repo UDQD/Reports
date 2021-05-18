@@ -86,9 +86,20 @@
 		    (object Class "customer"
 			quid       	"5AFF461901B6"
 			stereotype 	"Actor"
+			operations 	(list Operations
+			    (object Operation "give task"
+				quid       	"5B015FE9039A"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0))
 			class_attributes 	(list class_attribute_list
 			    (object ClassAttribute "name"
-				quid       	"5B015F85036B")))
+				quid       	"5B015F85036B"
+				type       	"String"
+				quidu      	"39CD6AE1011A")
+			    (object ClassAttribute "age"
+				quid       	"5B015FF9036B"
+				type       	"int")))
 		    (object Class "data scientist"
 			quid       	"5AFF457A01F4"
 			stereotype 	"Actor")
@@ -198,7 +209,12 @@
 			    (object Role "$UNNAMED$20"
 				quid       	"5AFF4AC100DD"
 				supplier   	"Use Case View::3.1::engineer"
-				quidu      	"5AFF4A5E002F"))))
+				quidu      	"5AFF4A5E002F")))
+		    (object Class_Category "NewPackage2"
+			quid       	"5B016029033D"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list)))
 		logical_presentations 	(list unit_reference_list
 		    (object UseCaseDiagram "3.1"
 			quid       	"5AFF45640271"
@@ -740,7 +756,7 @@
 				quidu      	"5AFF461901B6"
 				compartment 	(object Compartment
 				    Parent_View 	@29
-				    location   	(341, 2425)
+				    location   	(271, 2425)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -753,8 +769,8 @@
 					default_color 	TRUE)
 				    icon_style 	"Icon"
 				    anchor     	2
-				    nlines     	2
-				    max_width  	147
+				    nlines     	4
+				    max_width  	284
 				    justify    	0)
 				annotation 	8
 				autoResize 	TRUE)
@@ -4471,7 +4487,7 @@
 				quidu      	"5AFF461901B6"
 				compartment 	(object Compartment
 				    Parent_View 	@184
-				    location   	(421, 597)
+				    location   	(351, 597)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4484,8 +4500,8 @@
 					default_color 	TRUE)
 				    icon_style 	"Icon"
 				    anchor     	2
-				    nlines     	2
-				    max_width  	147
+				    nlines     	4
+				    max_width  	287
 				    justify    	0)
 				annotation 	8
 				autoResize 	TRUE)
@@ -4976,7 +4992,12 @@
 					vertices   	(list Points
 					    (2649, 1158)
 					    (2762, 1019))
-					line_style 	0))))))))
+					line_style 	0)))))))
+	    (object Class_Category "3.8"
+		quid       	"5B016033036B"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list)
+		logical_presentations 	(list unit_reference_list)))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
 		quid       	"39C9261001B7"
@@ -5279,6 +5300,58 @@
     root_subsystem 	(object SubSystem "Component View"
 	quid       	"39C9260C00D7"
 	physical_models 	(list unit_reference_list
+	    (object module "team leader" "PackageType" "Specification"
+		quid       	"5B0160AA01A6"
+		stereotype 	"Package Specification"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5B01611402B0"
+			supplier   	"Component View::engineer"
+			quidu      	"5B0160BA01B6"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"5B01611A0281"
+			supplier   	"Component View::data scientist"
+			quidu      	"5B0160DA02FE"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "NewPackageBody" "PackageType" "Body"
+		quid       	"5B0160AC0177"
+		stereotype 	"Package Body"
+		language   	"")
+	    (object module "engineer" "PackageType" "Specification"
+		quid       	"5B0160BA01B6"
+		stereotype 	"Package Specification"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5B0161320262"
+			supplier   	"Component View::repository"
+			quidu      	"5B0160E80281"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "data scientist" "PackageType" "Specification"
+		quid       	"5B0160DA02FE"
+		stereotype 	"Package Specification"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5B01612001F4"
+			supplier   	"Component View::repository"
+			quidu      	"5B0160E80281"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"5B01612C009D"
+			supplier   	"Component View::data base"
+			quidu      	"5B016105007D"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "repository" "PackageType" "Specification"
+		quid       	"5B0160E80281"
+		stereotype 	"Package Specification"
+		language   	"")
+	    (object module "data base" "PackageType" "Specification"
+		quid       	"5B016105007D"
+		stereotype 	"Package Specification"
+		language   	"")
 	    (object SubSystem "javax"
 		is_unit    	TRUE
 		is_loaded  	FALSE
@@ -5303,7 +5376,197 @@
 		max_width  	21600
 		origin_x   	0
 		origin_y   	0
-		items      	(list diagram_item_list)))
+		items      	(list diagram_item_list
+		    (object ModView "Component View::team leader" "PackageType" "Specification" @221
+			location   	(400, 752)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@221
+			    location   	(338, 556)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	549
+			    justify    	1
+			    label      	"team leader")
+			icon       	"Package Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B0160AA01A6"
+			autoResize 	TRUE
+			width      	282
+			height     	312)
+		    (object ModView "Component View::engineer" "PackageType" "Specification" @222
+			location   	(1328, 288)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@222
+			    location   	(1266, 92)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	553
+			    justify    	1
+			    label      	"engineer")
+			icon       	"Package Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B0160BA01B6"
+			autoResize 	TRUE
+			width      	282
+			height     	312)
+		    (object ModView "Component View::data scientist" "PackageType" "Specification" @223
+			location   	(2656, 528)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@223
+			    location   	(2594, 332)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	564
+			    justify    	1
+			    label      	"data scientist")
+			icon       	"Package Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B0160DA02FE"
+			autoResize 	TRUE
+			width      	282
+			height     	312)
+		    (object ModView "Component View::repository" "PackageType" "Specification" @224
+			location   	(1168, 1392)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@224
+			    location   	(1106, 1196)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	575
+			    justify    	1
+			    label      	"repository")
+			icon       	"Package Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B0160E80281"
+			autoResize 	TRUE
+			width      	282
+			height     	312)
+		    (object ModView "Component View::data base" "PackageType" "Specification" @225
+			location   	(2192, 1424)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@225
+			    location   	(2130, 1228)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	586
+			    justify    	1
+			    label      	"data base")
+			icon       	"Package Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B016105007D"
+			autoResize 	TRUE
+			width      	282
+			height     	312)
+		    (object ModVisView "" @226
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B01611402B0"
+			client     	@221
+			supplier   	@222
+			vertices   	(list Points
+			    (538, 680)
+			    (1188, 356))
+			line_style 	0)
+		    (object ModVisView "" @227
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B01611A0281"
+			client     	@221
+			supplier   	@223
+			vertices   	(list Points
+			    (538, 734)
+			    (2516, 539))
+			line_style 	0)
+		    (object ModVisView "" @228
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B01612001F4"
+			client     	@223
+			supplier   	@224
+			vertices   	(list Points
+			    (2514, 606)
+			    (1306, 1310))
+			line_style 	0)
+		    (object ModVisView "" @229
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B01612C009D"
+			client     	@223
+			supplier   	@225
+			vertices   	(list Points
+			    (2574, 681)
+			    (2306, 1202))
+			line_style 	0)
+		    (object ModVisView "" @230
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B0161320262"
+			client     	@222
+			supplier   	@224
+			vertices   	(list Points
+			    (1302, 441)
+			    (1198, 1170))
+			line_style 	0))))
 	category   	"Logical View"
 	quidu      	"5AFF451603DA")
     process_structure 	(object Processes
